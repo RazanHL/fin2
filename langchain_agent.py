@@ -23,6 +23,7 @@ from langchain_community.utilities.google_finance import GoogleFinanceAPIWrapper
 from prophet import Prophet
 from prophet.plot import plot_plotly
 from plotly import graph_objs as go
+from dotenv import load_dotenv
 # from IPython.display import Markdown, display
 # display(Markdown(output_text))
 
@@ -32,15 +33,11 @@ from plotly import graph_objs as go
 # companies_names = pd.DataFrame(content).T
 # companies_names.to_csv("companies_names.csv", index=False)
 
-# load_dotenv()
-os.environ["HUGGINGFACE_ACCESS_TOKEN"] ="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"
-os.environ["HUGGINGFACEHUB_API_TOKEN"] ="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" #os.getenv('HUGGINGFACEHUB_API_TOKEN')
-os.environ["SERPAPI_API_KEY"] = "61c1b0f3bafa9fa6a0c7375517eb3717c45cdd0dcfe67e6bfa1380aaee329ccc"
-
-old = "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"
-new = "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"
-os.environ['GROQ_API_KEY'] = old
-groq_api_key = old
+load_dotenv()
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv('HUGGINGFACEHUB_API_TOKEN')
+os.environ["SERPAPI_API_KEY"] = os.getenv('SERPAPI_API_KEY')
+os.environ['GROQ_API_KEY'] = os.getenv('GROQ_API_KEY')
+groq_api_key = os.getenv('GROQ_API_KEY')
 
 llm=ChatGroq(groq_api_key=groq_api_key,
                 model_name="llama3-70b-8192",

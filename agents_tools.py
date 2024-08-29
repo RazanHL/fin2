@@ -20,9 +20,7 @@ from prophet.plot import plot_plotly
 from plotly import graph_objs as go
 
 
-os.environ['SERPER_API_API_KEY'] = 'bb1aa0326599cfdec4b017f65bc39a4618f13ba9947191ac2971d4cc5a72466e'
-SERPER_KEY = 'bb1aa0326599cfdec4b017f65bc39a4618f13ba9947191ac2971d4cc5a72466e'
-os.environ['SEC_API_KEY'] = 'f94f0b3255635489c10c1b8d13d3520f5b216e03b2a7792f496df16fd924e4aa'
+
 embedder = HuggingFaceEmbeddings()
 
 # @st.cache_resource(show_spinner=False)
